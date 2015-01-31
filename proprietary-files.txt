@@ -91,7 +91,6 @@ lib/libnvwsi.so
 lib/libpowerservice_client.so
 lib/libpowerservice.so
 lib/libstagefrighthw.so
-lib/libtinyalsa-legacy.so
 lib/libtinyalsa.so
 lib/libtsechdcp.so
 lib/libtsec_wrapper.so
