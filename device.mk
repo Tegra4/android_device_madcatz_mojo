@@ -82,11 +82,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/com.nvidia.nvsi.xml:system/etc/permissions/com.nvidia.nvsi.xml
 
 # Wifi
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/wifi_loader.sh:system/bin/wifi_loader.sh
+
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd \
-    libnetcmdiface \
-    libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
 

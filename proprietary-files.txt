@@ -16,7 +16,6 @@ bin/usdwatchdog
 bin/ussrd
 bin/ussr_setup.sh
 bin/wbtmiscwriter.sh
-bin/wifi_loader.sh
 etc/bluetooth/bdaddr
 etc/enctune.conf
 etc/firmware/bcm43241.hcd
