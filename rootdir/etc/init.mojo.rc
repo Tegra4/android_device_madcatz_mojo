@@ -48,7 +48,6 @@ on fs
     mount_all /fstab.mojo
 
 on post-fs-data
-    mkdir /data/misc/wifi/firmware 0770 wifi wifi
     mkdir /data/misc/wifi/conf 0777 wifi wifi
     mkdir /data/misc/bluedroid/conf 0777 bluetooth bluetooth
     mkdir /data/nvcam 0700 media camera
@@ -178,8 +177,11 @@ on property:testing.mediascanner.mft=1
 
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
+    -I/system/etc/wifi/wpa_supplicant_overlay.conf -N \
+    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
+    -I/system/etc/wifi/p2p_supplicant_overlay.conf \
+    -puse_p2p_group_interface=1 -e/data/misc/wifi/entropy.bin \
+    -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
     #   after setting up the capabilities required for WEXT
     #   user wifi
@@ -191,10 +193,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/etc/wifi/wpa_supplicant_overlay.conf -N \
-    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
-    -I/system/etc/wifi/p2p_supplicant_overlay.conf \
-    -puse_p2p_group_interface=1 \
+    -I/system/etc/wifi/wpa_supplicant_overlay.conf \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
     #   after setting up the capabilities required for WEXT
