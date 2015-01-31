@@ -8,16 +8,14 @@
 # distribution of this software and related documentation without an express
 # license agreement from NVIDIA CORPORATION is strictly prohibited.
 
-brcm_symlink=y
 region=$(cat /data/misc/wifi/conf/wifi_region.conf)
 
 	#check if symlinks are available; if available, do not create symlinks
 	#this check is needed when data partition is remounted after encryption
 	if [ -L /system/vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin ]; then
-		brcm_symlink=n
-	fi
+		/system/bin/log -t "wifiloader" -p i  "Firmware is symlinked"
 else
-	if [ $brcm_symlink = y ]; then
+		/system/bin/log -t "wifiloader" -p i  "Symlinking firmware"
 		/system/bin/ln -s /system/vendor/firmware/bcm43241/fw_bcmdhd.bin /system/vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin
         fi
 
