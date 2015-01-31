@@ -1,12 +1,6 @@
-bin/cluster
-bin/cluster_get.sh
-bin/cluster_set.sh
-bin/dcc
 bin/ethernet_loader.sh
-bin/hotplug
 bin/input_cfboost_init.sh
 bin/mft_data
-bin/mount_debugfs.sh
 bin/nvcgcserver
 bin/nvcpud
 bin/nv_hciattach
@@ -97,7 +91,6 @@ lib/libnvwsi.so
 lib/libpowerservice_client.so
 lib/libpowerservice.so
 lib/libstagefrighthw.so
-lib/libtf_crypto_sst.so
 lib/libtinyalsa-legacy.so
 lib/libtinyalsa.so
 lib/libtsechdcp.so
