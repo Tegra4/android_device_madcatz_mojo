@@ -20,9 +20,7 @@ etc/firmware/nvavp_vid_ucode_alt.bin
 etc/firmware/tegra11x/nvhost_msenc02.fw
 etc/firmware/tegra11x/nvhost_tsec.fw
 etc/nvcpud.conf
-etc/nvram_JP01_43241.txt
-etc/nvram_US39_43241.txt
-etc/nvram_XV01_43241.txt
+etc/nvram_43241.txt
 lib/egl/libEGL_tegra.so
 lib/egl/libGLESv1_CM_tegra.so
 lib/egl/libGLESv2_tegra.so
@@ -96,6 +94,7 @@ lib/libtsechdcp.so
 lib/libtsec_wrapper.so
 lib/libussrd.so
 lib/nvcms/device.cfg
+vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin
 vendor/firmware/bcm43241/fw_bcmdhd.bin
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/hw/power.mojo.so

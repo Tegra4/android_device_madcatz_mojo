@@ -80,10 +80,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/com.nvidia.nvsi.xml:system/etc/permissions/com.nvidia.nvsi.xml
 
-# Wifi
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/wifi_loader.sh:system/bin/wifi_loader.sh
-
 PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
