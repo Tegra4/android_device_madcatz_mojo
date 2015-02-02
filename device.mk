@@ -18,9 +18,6 @@
 PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := tvdpi
 
-# Bootanimation
-TARGET_BOOTANIMATION_NAME := 800
-
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/madcatz/mojo/mojo-vendor.mk)
@@ -90,12 +87,6 @@ PRODUCT_CHARACTERISTICS := tablet
 # Adb over TCP
 PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555
-
-# Debugging
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.debuggable=1
 
 # USB
 PRODUCT_PACKAGES += \

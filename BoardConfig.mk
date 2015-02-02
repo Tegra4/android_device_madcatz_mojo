@@ -17,8 +17,6 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/madcatz/mojo/include
-
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -48,9 +46,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/madcatz/mojo/bluetooth
 
-# Camera
-USE_CAMERA_STUB = true
-
 # Graphics
 USE_OPENGL_RENDERER := true
 
@@ -69,10 +64,6 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Recovery
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_DEVICE_DIRS += device/madcatz/mojo
 TARGET_RECOVERY_FSTAB := device/madcatz/mojo/rootdir/etc/fstab.mojo
 
 # Wifi related defines
@@ -86,29 +77,4 @@ WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcm43241/parameters/firmware_pa
 WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/bcm43241/fw_bcmdhd.bin"
 
-# SELINUX Defines
-#BOARD_SEPOLICY_DIRS := \
-#    device/madcatz/mojo/sepolicy
-
-#BOARD_SEPOLICY_UNION := \
-#    file_contexts \
-#    app.te \
-#    device.te \
-#    drmserver.te \
-#    init_shell.te \
-#    file.te \
-#    system.te \
-#    zygote.te \
-#    domain.te \
-#    ueventd.te
-
 MALLOC_IMPL := dlmalloc
-
-# TWRP
-DEVICE_RESOLUTION := 1920x1080
-BOARD_HAS_NO_REAL_SDCARD := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-RECOVERY_SDCARD_ON_DATA := true
-TW_NO_SCREEN_TIMEOUT := true
-TW_NO_CPU_TEMP := true
-TW_EXCLUDE_MTP := true
