@@ -272,12 +272,6 @@ service wbtmiscwriter /system/bin/wbtmiscwriter.sh
     group root
     oneshot
 
-service ethloader /system/bin/ethernet_loader.sh
-    class main
-    user root
-    group root
-    oneshot
-
 on property:init.svc.hciattach=stopped
     write /sys/devices/platform/reg-userspace-consumer.1/state disabled
 

@@ -1,4 +1,3 @@
-bin/ethernet_loader.sh
 bin/input_cfboost_init.sh
 bin/mft_data
 bin/nvcgcserver
