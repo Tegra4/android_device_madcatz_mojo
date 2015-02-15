@@ -64,6 +64,9 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Recovery
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+TARGET_RECOVERY_DEVICE_DIRS += device/madcatz/mojo
 TARGET_RECOVERY_FSTAB := device/madcatz/mojo/rootdir/etc/fstab.mojo
 
 # Wifi related defines
@@ -78,3 +81,20 @@ WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/bcm43241/fw_bcmdhd_
 WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/bcm43241/fw_bcmdhd.bin"
 
 MALLOC_IMPL := dlmalloc
+
+# TWRP
+DEVICE_RESOLUTION := 1920x1200
+BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_EXCLUDE_MTP := true
+TW_EXCLUDE_SUPERSU := true
+TW_NO_SCREEN_TIMEOUT := true
+TW_NO_CPU_TEMP := true
+
+# Multirom
+MR_DPI := hdpi
+MR_DPI_FONT := 216
+MR_FSTAB := device/madcatz/mojo/multirom/mrom.fstab
+MR_INIT_DEVICES := device/madcatz/mojo/multirom/mr_init_devices.c
+MR_KEXEC_MEM_MIN := 0x85000000
