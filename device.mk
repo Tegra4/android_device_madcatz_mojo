@@ -94,6 +94,10 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.debuggable=1
 
+# Enable USB OTG interface
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.isUsbOtgEnabled=1
+
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
