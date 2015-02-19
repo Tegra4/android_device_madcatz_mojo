@@ -14,23 +14,26 @@ on early-init
 on init
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
+
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /storage/sdcard1 0700 root root
 
-    export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdrive
+    # create directory for mounting usb drives
+    mkdir /mnt/media_rw/usbdrive1 0700 media_rw media_rw
+    mkdir /mnt/media_rw/usbdrive2 0700 media_rw media_rw
+    mkdir /storage/usbdrive1 0700 root root
+    mkdir /storage/usbdrive2 0700 root root
+
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
+    export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdrive1:/storage/usbdrive2
 
     # Support legacy paths
     symlink /storage/emulated/legacy /sdcard
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-
-    # create directory for mounting usb drives
-    mkdir /mnt/media_rw/usbdrive 0700 media_rw media_rw
-    mkdir /storage/usbdrive 0700 root root
 
     # Create directory for mft
     mkdir /mft  0777 system system
@@ -255,7 +258,11 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw
     class late_start
     disabled
 
-service fuse_usbdrive /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdrive /storage/usbdrive
+service fuse_usbdrive1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdrive1 /storage/usbdrive1
+    class late_start
+    disabled
+
+service fuse_usbdrive2 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdrive2 /storage/usbdrive2
     class late_start
     disabled
 
