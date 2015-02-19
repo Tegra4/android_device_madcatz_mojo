@@ -34,6 +34,13 @@ on init
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    symlink /storage/sdcard1 /extSdCard
+    symlink /storage/sdcard1 /mnt/extSdCard
+    symlink /storage/sdcard1 /external_sd
+    symlink /storage/usbdrive1 /usbdrive1
+    symlink /storage/usbdrive1 /mnt/usbdrive1
+    symlink /storage/usbdrive2 /usbdrive2
+    symlink /storage/usbdrive2 /mnt/usbdrive2
 
     # Create directory for mft
     mkdir /mft  0777 system system
