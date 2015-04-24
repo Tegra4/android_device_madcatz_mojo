@@ -48,6 +48,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/madcatz/mojo/bluetooth
 
 # Graphics
 USE_OPENGL_RENDERER := true
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
+VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
