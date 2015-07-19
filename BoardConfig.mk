@@ -83,11 +83,11 @@ WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/bcm43241/fw_bcmdhd.
 MALLOC_IMPL := dlmalloc
 
 # TWRP
-DEVICE_RESOLUTION := 1920x1200
+TW_THEME := landscape_hdpi
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
-TW_EXCLUDE_MTP := true
+TW_BRIGHTNESS_PATH := "/brightness"
 TW_EXCLUDE_SUPERSU := true
 TW_NO_SCREEN_TIMEOUT := true
 TW_NO_CPU_TEMP := true
