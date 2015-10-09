@@ -12,43 +12,14 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
 
 on init
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage/emulated 0555 root root
-
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    mkdir /storage/sdcard1 0700 root root
-
-    # create directory for mounting usb drives
-    mkdir /mnt/media_rw/usbdrive1 0700 media_rw media_rw
-    mkdir /mnt/media_rw/usbdrive2 0700 media_rw media_rw
-    mkdir /storage/usbdrive1 0700 root root
-    mkdir /storage/usbdrive2 0700 root root
-
-    export EXTERNAL_STORAGE /storage/emulated/legacy
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
-    export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdrive1:/storage/usbdrive2
-
     # Support legacy paths
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /mnt/sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-    symlink /storage/sdcard1 /extSdCard
-    symlink /storage/sdcard1 /mnt/extSdCard
-    symlink /storage/sdcard1 /external_sd
-    symlink /storage/usbdrive1 /usbdrive1
-    symlink /storage/usbdrive1 /mnt/usbdrive1
-    symlink /storage/usbdrive2 /usbdrive2
-    symlink /storage/usbdrive2 /mnt/usbdrive2
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
     # Create directory for mft
     mkdir /mft  0777 system system
 
 on fs
-    setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
-    setprop ro.crypto.umount_sd false
-    setprop ro.crypto.fuse_sdcard true
     mount_all /fstab.mojo
 
 on post-fs-data
@@ -59,8 +30,6 @@ on post-fs-data
     chown 0777 /data/misc/bluedroid/conf
 
     mkdir /data/misc/wminput 0776 system system
-
-    mkdir /data/media 0770 media_rw media_rw
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
@@ -257,21 +226,6 @@ service iprenew_eth0 /system/bin/dhcpcd -n
     class main
     disabled
     oneshot
-
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
-
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
-    class late_start
-    disabled
-
-service fuse_usbdrive1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdrive1 /storage/usbdrive1
-    class late_start
-    disabled
-
-service fuse_usbdrive2 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdrive2 /storage/usbdrive2
-    class late_start
-    disabled
 
 # wbtmacwriter - to get wifi bt address from mft_data
 service wbtmiscwriter /system/bin/wbtmiscwriter.sh
