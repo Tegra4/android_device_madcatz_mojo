@@ -100,4 +100,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     setup_fs
 
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport \
+
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
