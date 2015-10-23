@@ -87,10 +87,6 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555
 
-# Enable USB OTG interface
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.isUsbOtgEnabled=1
-
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
