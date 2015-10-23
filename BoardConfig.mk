@@ -28,10 +28,9 @@ TARGET_CPU_VARIANT := cortex-a15
 TARGET_BOARD_PLATFORM := tegra
 TARGET_BOOTLOADER_BOARD_NAME := mojo
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_RADIOIMAGE := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.selinux=disabled smsc95xx.boot_wol_config=0x07 smsc95xx.turbo_mode=N
+BOARD_KERNEL_CMDLINE := androidboot.selinux=disabled
 TARGET_KERNEL_SOURCE := kernel/madcatz/mojo
 TARGET_KERNEL_CONFIG := cyanogenmod_mojo_defconfig
 
@@ -67,8 +66,6 @@ TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Recovery
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-TARGET_RECOVERY_DEVICE_DIRS += device/madcatz/mojo
 TARGET_RECOVERY_FSTAB := device/madcatz/mojo/rootdir/etc/fstab.mojo
 
 # Wifi related defines
@@ -83,20 +80,3 @@ WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/bcm43241/fw_bcmdhd_
 WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/bcm43241/fw_bcmdhd.bin"
 
 MALLOC_IMPL := dlmalloc
-
-# TWRP
-TW_THEME := landscape_hdpi
-BOARD_HAS_NO_REAL_SDCARD := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-RECOVERY_SDCARD_ON_DATA := true
-TW_BRIGHTNESS_PATH := "/brightness"
-TW_EXCLUDE_SUPERSU := true
-TW_NO_SCREEN_TIMEOUT := true
-TW_NO_CPU_TEMP := true
-
-# Multirom
-MR_DPI := hdpi
-MR_DPI_FONT := 216
-MR_FSTAB := device/madcatz/mojo/multirom/mrom.fstab
-MR_INIT_DEVICES := device/madcatz/mojo/multirom/mr_init_devices.c
-MR_KEXEC_MEM_MIN := 0x85000000
