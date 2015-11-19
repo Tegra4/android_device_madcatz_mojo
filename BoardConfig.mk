@@ -30,7 +30,7 @@ TARGET_BOOTLOADER_BOARD_NAME := mojo
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := androidboot.selinux=disabled
 TARGET_KERNEL_SOURCE := kernel/madcatz/mojo
 TARGET_KERNEL_CONFIG := cyanogenmod_mojo_defconfig
 
