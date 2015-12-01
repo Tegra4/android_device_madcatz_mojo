@@ -248,12 +248,6 @@ service nvcpud /system/bin/nvcpud
     group system
     oneshot
 
-# Enable PowerService
-service powerservice /system/bin/powerservice
-    class main
-    user system
-    group system
-
 # create filesystems if necessary
 service setup_fs /system/bin/setup_fs \
         /dev/block/platform/sdhci-tegra.3/by-name/UDA \
