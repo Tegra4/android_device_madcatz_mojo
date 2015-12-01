@@ -31,7 +31,6 @@ PRODUCT_PACKAGES += \
     fstab.mojo \
     init.mojo.rc \
     init.mojo.usb.rc \
-    power.mojo.rc \
     ueventd.mojo.rc
 
 # Permissions
