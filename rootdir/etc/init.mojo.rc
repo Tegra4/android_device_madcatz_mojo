@@ -130,9 +130,9 @@ on boot
     write /sys/power/edp/battery/speaker/notify 1
 
 # USB Host enable
-on property:sys.boot_completed=1
-    write /sys/devices/platform/tegra-otg/enable_host 1
-    write /sys/bus/usb/devices/usb4/power/wakeup enabled
+#on property:sys.boot_completed=1
+#    write /sys/devices/platform/tegra-otg/enable_host 1
+#    write /sys/bus/usb/devices/usb4/power/wakeup enabled
 
 # CPU Boost: boost CPU on input events
 service input-cfboost /system/bin/input_cfboost_init.sh
