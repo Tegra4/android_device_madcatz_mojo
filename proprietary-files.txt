@@ -94,7 +94,6 @@ lib/nvcms/device.cfg
 vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin
 vendor/firmware/bcm43241/fw_bcmdhd.bin
 vendor/lib/drm/libdrmwvmplugin.so
-vendor/lib/hw/power.mojo.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
