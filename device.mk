@@ -105,3 +105,11 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+
+# Ubuntu Overlay Files
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/ubuntu/display.conf:system/ubuntu/etc/ubuntu-touch-session.d/android.conf \
+   $(LOCAL_PATH)/ubuntu/udev.rules:system/ubuntu/lib/udev/rules.d/70-android.rules
+
+# Temporarily adding prebuilt libhybris binaries
+$(call inherit-product-if-exists, ubuntu/libhybris-prebuilt/device-ubuntu.mk)

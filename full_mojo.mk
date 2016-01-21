@@ -29,5 +29,5 @@ $(call inherit-product, device/madcatz/mojo/device.mk)
 PRODUCT_NAME := full_mojo
 PRODUCT_DEVICE := mojo
 PRODUCT_BRAND := MadCatz
-PRODUCT_MODEL := Mad Catz M.O.J.O.
+PRODUCT_MODEL := Mad Catz M.O.J.O. Ubuntu
 PRODUCT_MANUFACTURER := Foxconn International Holdings Limited
