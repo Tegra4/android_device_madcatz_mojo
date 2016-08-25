@@ -23,8 +23,8 @@
 #include <log/log.h>
 #include <safe_iop.h>
 
+#include <SharedBuffer.h>
 #include <utils/Errors.h>
-#include <utils/SharedBuffer.h>
 #include "NV_VectorImpl.h"
 
 /*****************************************************************************/
