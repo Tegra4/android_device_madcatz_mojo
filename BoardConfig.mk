@@ -65,6 +65,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 14042529792
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Recovery
+BOARD_CUSTOM_BOOTIMG_MK := device/madcatz/mojo/shbootimg.mk
 BOARD_NO_SECURE_DISCARD := true
 TARGET_RECOVERY_FSTAB := device/madcatz/mojo/rootdir/etc/fstab.mojo
 
