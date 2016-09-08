@@ -99,6 +99,7 @@ PRODUCT_PACKAGES += \
 
 # Shim
 PRODUCT_PACKAGES += \
+    libshim_icu \
     libshim_vectorimpl
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)

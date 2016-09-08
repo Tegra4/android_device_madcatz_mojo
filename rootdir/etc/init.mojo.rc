@@ -13,7 +13,7 @@ on early-init
 
 on init
 
-    export LD_SHIM_LIBS "/system/lib/libnvcpud.so|libshim_vectorimpl.so:/system/lib/hw/audio_policy.tegra.so|libshim_vectorimpl.so"
+    export LD_SHIM_LIBS "/system/lib/libnvcpud.so|libshim_vectorimpl.so:/system/lib/hw/audio_policy.tegra.so|libshim_vectorimpl.so:/system/lib/libicuuc.so|libshim_icu.so"
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
