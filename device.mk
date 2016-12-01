@@ -100,4 +100,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     setup_fs
 
+# Shim
+PRODUCT_PACKAGES += \
+    libshim_vectorimpl
+
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
