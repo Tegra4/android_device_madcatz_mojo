@@ -101,6 +101,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     setup_fs
 
+# Power
+PRODUCT_PACKAGES += \
+    power.tegra
+
 # Shim
 PRODUCT_PACKAGES += \
     libshim_vectorimpl
