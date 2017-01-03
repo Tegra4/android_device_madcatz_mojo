@@ -88,10 +88,6 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555
 
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
-
 # Enable Widevine drm
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
