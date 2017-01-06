@@ -18,7 +18,7 @@
 | Release Date            | December 2013                     |
 
 ## Device Picture
-![Mad Catz M.O.J.O](http://store.madcatz.com/MCB60211_mojo_console_00_lg.jpg "Mad Catz M.O.J.O")
+![Mad Catz M.O.J.O](http://gamingindustryiq.com/wp-content/uploads/2013/10/mojo3.jpg "Mad Catz M.O.J.O")
 
 ## Copyright
 
