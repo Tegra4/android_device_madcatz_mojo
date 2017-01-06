@@ -32,7 +32,7 @@ TARGET_NO_BOOTLOADER := true
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=mojo androidboot.selinux=permissive
 TARGET_KERNEL_SOURCE := kernel/madcatz/mojo
-TARGET_KERNEL_CONFIG := cyanogenmod_mojo_defconfig
+TARGET_KERNEL_CONFIG := tegra11_mojo_android_defconfig
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
