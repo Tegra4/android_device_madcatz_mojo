@@ -12,6 +12,9 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
 
 on init
+
+    export LD_SHIM_LIBS "/system/lib/libnvcpud.so|libshim_vectorimpl.so:/system/lib/hw/audio_policy.tegra.so|libshim_vectorimpl.so"
+
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
